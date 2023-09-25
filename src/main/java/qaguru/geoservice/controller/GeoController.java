@@ -33,7 +33,7 @@ public class GeoController {
     }
 
     @PatchMapping("/country")
-    public GeoJson updateCountryNameByCode(@RequestBody GeoJson country) {
-        return geoService.updateCountryName(country.getCountryCode(), country.getCountryName());
+    public GeoJson updateCountryNameByCode(@PathVariable String countryCode, @RequestParam String newName) {
+        return geoService.updateCountryName(countryCode, newName);
     }
 }
